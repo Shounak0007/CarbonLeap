@@ -60,4 +60,4 @@ The resulting file, `farm_sensor_readings.json`, is included in the root of this
 
 ## A Note on Test Data
 
-To properly test the background processing feature, the repository includes a `farm_sensor_readings.json` file with 500 records. This was generated using the LLM prompt specified in the assignment details. You can copy and paste its contents into the submission form on the UI to test a large batch upload.
+To properly test the background processing feature, the repository includes a `farm_sensor_readings.json` file with 500 records. This was generated using the LLM prompt specified in the assignment details.
