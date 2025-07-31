@@ -44,7 +44,7 @@ def get_db():
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the Field Insights API!"}
+    return {"message": "Welcome to the Field Insights API2!"}
 
 
 @app.post("/readings/", response_model=schemas.SensorReading)
