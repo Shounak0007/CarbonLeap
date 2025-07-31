@@ -3,8 +3,9 @@
 This project is a full-stack web application built for the Carbonleap Full Stack Intern assignment. It simulates a real-world IoT system for ingesting, processing, and analyzing farm sensor data like temperature and soil moisture.
 The core of the project is a backend API that handles data submission and runs background jobs, with a simple React frontend to visualize the data and interact with the system.
 
-**FrontEnd:** `[https://pleasing-solace-production.up.railway.app/]`
-**Backend:** `[https://carbonleap-production.up.railway.app/]`
+**Links**
+-**FrontEnd:** `[https://pleasing-solace-production.up.railway.app/]`
+-**Backend:** `[https://carbonleap-production.up.railway.app/]`
 
 ## Core Technologies
 
