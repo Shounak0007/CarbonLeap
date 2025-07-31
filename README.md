@@ -1,8 +1,10 @@
 # Field Insights Dashboard
 
-This is my submission for the Carbonleap Full Stack Intern take-home assignment. It's a complete web application that simulates ingesting, processing, and displaying farm sensor data.
+This project is a full-stack web application built for the Carbonleap Full Stack Intern assignment. It simulates a real-world IoT system for ingesting, processing, and analyzing farm sensor data like temperature and soil moisture.
+The core of the project is a backend API that handles data submission and runs background jobs, with a simple React frontend to visualize the data and interact with the system.
 
-**Live Demo:** `[PASTE YOUR LIVE DEMO URL HERE]`
+**FrontEnd:** `[https://pleasing-solace-production.up.railway.app/]`
+**Backend:** `[https://carbonleap-production.up.railway.app/]`
 
 ## Core Technologies
 
@@ -27,6 +29,7 @@ You'll need **Docker Desktop** installed and running on your machine.
 3.  **Access the app:**
     - **Frontend UI:** [http://localhost:3000](http://localhost:3000)
     - **Backend API Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
+  
 
 ## API Endpoints
 
@@ -37,6 +40,24 @@ You'll need **Docker Desktop** installed and running on your machine.
 | `POST` | `/readings/batch` | Submits a batch of readings for background processing. |
 | `GET`  | `/jobs/{job_id}`  | Checks the status of a background job.                 |
 
+## Data Generation
+
+To realistically test the asynchronous processing capabilities and populate the dashboard with meaningful data, I generated a test dataset of 500 records.
+I used Google's Gemini with the following prompt, as recommended by the assignment:
+
+```
+Generate 500+ farm sensor readings as a table or CSV. Each reading must have:
+timestamp (ISO 8601, UTC),
+field_id (e.g., 'field_1', 'field_2', ...),
+sensor_type (one of: soil_moisture, temperature, humidity, ph, sunlight, rainfall, wind_speed, soil_nitrogen),
+reading_value (in a realistic range for the type),
+unit (see below).
+Output as CSV or JSONL.
+```
+
+The resulting file, `farm_sensor_readings.json`, is included in the root of this repository.
+
+
 ## A Note on Test Data
 
-To properly test the background processing feature, the repository includes a `data.json` file with 500 records. This was generated using the LLM prompt specified in the assignment details. You can copy and paste its contents into the submission form on the UI to test a large batch upload.
+To properly test the background processing feature, the repository includes a `farm_sensor_readings.json` file with 500 records. This was generated using the LLM prompt specified in the assignment details. You can copy and paste its contents into the submission form on the UI to test a large batch upload.
