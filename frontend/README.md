@@ -6,10 +6,10 @@ This is my submission for the Carbonleap Full Stack Intern take-home assignment.
 
 ## Core Technologies
 
-*   **Backend:** Python, FastAPI, Celery
-*   **Frontend:** React
-*   **Database:** PostgreSQL
-*   **Infrastructure:** Docker, Docker Compose, Redis
+- **Backend:** Python, FastAPI, Celery
+- **Frontend:** React
+- **Database:** PostgreSQL
+- **Infrastructure:** Docker, Docker Compose, Redis
 
 ## How to Run Locally
 
@@ -25,18 +25,17 @@ You'll need **Docker Desktop** installed and running on your machine.
     docker compose up --build
     ```
 3.  **Access the app:**
-    *   **Frontend UI:** [http://localhost:3000](http://localhost:3000)
-    *   **Backend API Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
+    - **Frontend UI:** [http://localhost:3000](http://localhost:3000)
+    - **Backend API Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ## API Endpoints
 
-| Method | Path                  | Description                                            |
-| :----- | :-------------------- | :----------------------------------------------------- |
-| `POST` | `/readings/`          | Submits a single sensor reading synchronously.         |
-| `GET`  | `/readings/`          | Retrieves a list of all sensor readings.               |
-| `POST` | `/readings/batch`     | Submits a batch of readings for background processing.   |
-| `GET`  | `/jobs/{job_id}`      | Checks the status of a background job.                 |
-
+| Method | Path              | Description                                            |
+| :----- | :---------------- | :----------------------------------------------------- |
+| `POST` | `/readings/`      | Submits a single sensor reading synchronously.         |
+| `GET`  | `/readings/`      | Retrieves a list of all sensor readings.               |
+| `POST` | `/readings/batch` | Submits a batch of readings for background processing. |
+| `GET`  | `/jobs/{job_id}`  | Checks the status of a background job.                 |
 
 ## A Note on Test Data
 
