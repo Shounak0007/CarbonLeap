@@ -6,11 +6,6 @@ from sqlalchemy.orm import sessionmaker
 
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
-# --- START OF THE DEBUGGING CODE ---
-print("--- DEBUGGING ---")
-print(f"DATABASE_URL as seen by the app: {SQLALCHEMY_DATABASE_URL}")
-print("--- END DEBUGGING ---")
-# --- END OF THE DEBUGGING CODE ---
 
 
 if SQLALCHEMY_DATABASE_URL and SQLALCHEMY_DATABASE_URL.startswith("postgres://"):
