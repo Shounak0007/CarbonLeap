@@ -1,0 +1,49 @@
+
+
+services:
+  # Backend FastAPI Service
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/farm_db
+
+  # PostgreSQL Database Service
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=farm_db
+    ports:
+      - "5432:5432"
+
+ # NEW: Redis Service
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  # NEW: Celery Worker Service
+  worker:
+    build: ./backend 
+    command: celery -A worker.celery_app worker --loglevel=info
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+      - redis
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/farm_db
+  
+
+volumes:
+  postgres_data:
