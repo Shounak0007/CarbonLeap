@@ -23,7 +23,7 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://localhost",
-    "https://pleasing-solace-production.up.railway.app/"
+    "https://pleasing-solace-production.up.railway.app"
 ]
 
 
