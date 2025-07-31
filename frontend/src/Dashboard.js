@@ -1,5 +1,3 @@
-// frontend/src/Dashboard.js
-
 import React from "react";
 
 const Dashboard = ({ readings, error }) => {

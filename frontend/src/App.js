@@ -6,7 +6,7 @@ import "./App.css";
 import Dashboard from "./Dashboard";
 import ReadingForm from "./ReadingForm";
 
-const API_URL = "http://localhost:8000";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
 
 function App() {
   const [readings, setReadings] = useState([]);
